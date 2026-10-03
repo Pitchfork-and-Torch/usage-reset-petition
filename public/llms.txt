@@ -1,0 +1,11 @@
+# Friday 4:45pm New York
+
+> Public petition. Grok Bot weekly usage should reset every Friday at 4:45pm New York time.
+
+This page is not an xAI product. A signature is a public X post that contains a one-time code issued to that handle.
+
+Source posts:
+- https://x.com/SuddenlyJon/status/2106122988097519712
+- https://x.com/tibor_tee/status/2106408022696477145
+
+Ledger: https://usageresetpetition.jonbailey.xyz/api/ledger
