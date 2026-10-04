@@ -1,0 +1,316 @@
+:root {
+  --paper: #e6e1d6;
+  --sheet: #f4f1ea;
+  --ink: #1c1b16;
+  --muted: #3f3b34;
+  --rule: rgba(28, 27, 22, 0.2);
+  --stamp: #8e1d1d;
+  --ok: #1d5c32;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+}
+
+.skip {
+  position: absolute;
+  left: 0.75rem;
+  top: 0.75rem;
+  transform: translateY(-150%);
+  background: var(--ink);
+  color: var(--sheet);
+  padding: 0.5rem 0.75rem;
+  z-index: 2;
+}
+
+.skip:focus {
+  transform: none;
+}
+
+.sheet {
+  width: min(40rem, calc(100% - 1.5rem));
+  margin: 2rem auto 3rem;
+  background: var(--sheet);
+  color: var(--ink);
+  border: 1px solid var(--ink);
+  box-shadow: 6px 6px 0 var(--ink);
+  padding: clamp(1.25rem, 4vw, 2.4rem);
+}
+
+.mast {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  margin: 0 0 1.75rem;
+  padding-bottom: 0.7rem;
+  border-bottom: 1px solid var(--ink);
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.mast p {
+  margin: 0;
+}
+
+.every,
+.where {
+  margin: 0;
+  font-family: var(--font-display);
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.every {
+  font-size: 0.95rem;
+}
+
+.sheet h1.clock {
+  margin: 0.15rem 0 0;
+  color: var(--stamp);
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: clamp(5.2rem, 22vw, 8.4rem);
+  line-height: 0.82;
+  letter-spacing: -0.045em;
+}
+
+.clock span {
+  margin-left: 0.35rem;
+  color: var(--ink);
+  font-size: 0.28em;
+  letter-spacing: 0;
+  vertical-align: 0.7em;
+}
+
+.where {
+  margin-top: 0.35rem;
+  color: var(--muted);
+  font-size: 0.82rem;
+}
+
+.ask {
+  margin: 1.35rem 0 0;
+  max-width: 34rem;
+  font-size: 1.2rem;
+  line-height: 1.4;
+  font-weight: 500;
+}
+
+.cite,
+.sign,
+.ledger {
+  margin-top: 2rem;
+  padding-top: 1.25rem;
+  border-top: 1px solid var(--rule);
+}
+
+h2 {
+  margin: 0 0 0.75rem;
+  font-size: 1.35rem;
+}
+
+.cite ol,
+.steps {
+  margin: 0;
+  padding-left: 1.2rem;
+}
+
+.cite li,
+.steps li {
+  margin: 0.45rem 0;
+}
+
+.cite a,
+.colophon a,
+.signers a {
+  color: inherit;
+}
+
+.cite p,
+.colophon p,
+#line-box p,
+#showing,
+#empty,
+#form-status {
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+
+.sign form,
+#line-box {
+  margin-top: 1rem;
+}
+
+label {
+  display: block;
+  margin-bottom: 0.35rem;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.row {
+  display: flex;
+  gap: 0.5rem;
+}
+
+input[type="text"],
+input[type="url"],
+textarea {
+  width: 100%;
+  min-height: 3rem;
+  padding: 0.7rem 0.75rem;
+  border: 1px solid var(--ink);
+  border-radius: 0;
+  background: #fffdf8;
+  color: var(--ink);
+  font: 500 1rem/1.4 var(--font-sans);
+}
+
+textarea {
+  min-height: 5.5rem;
+  resize: vertical;
+}
+
+.row input {
+  flex: 1;
+}
+
+button,
+.post-x {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 3rem;
+  padding: 0.75rem 1rem;
+  border: 0;
+  background: var(--ink);
+  color: var(--sheet);
+  font: 700 0.95rem/1 var(--font-sans);
+  text-decoration: none;
+  cursor: pointer;
+}
+
+button:hover,
+.post-x:hover,
+button:focus-visible,
+.post-x:focus-visible,
+input:focus-visible,
+textarea:focus-visible,
+a:focus-visible {
+  outline: 2px solid var(--stamp);
+  outline-offset: 2px;
+}
+
+button:hover,
+.post-x:hover {
+  background: var(--stamp);
+}
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 0.55rem;
+}
+
+.hp-wrap {
+  position: absolute;
+  left: -10000px;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+
+#form-status {
+  min-height: 1.4rem;
+  margin: 0.75rem 0 0;
+}
+
+#form-status[data-kind="bad"] {
+  color: var(--stamp);
+}
+
+#form-status[data-kind="ok"] {
+  color: var(--ok);
+}
+
+.ledger-head {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.count {
+  margin: 0;
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: clamp(3rem, 10vw, 4.4rem);
+  line-height: 0.8;
+  letter-spacing: -0.04em;
+}
+
+.signers {
+  list-style: none;
+  margin: 0.5rem 0 0;
+  padding: 0;
+}
+
+.signers li {
+  display: grid;
+  gap: 0.15rem;
+  padding: 0.85rem 0;
+  border-top: 1px solid var(--rule);
+}
+
+.signers a {
+  font-weight: 700;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.15em;
+}
+
+.signers p,
+.signers time {
+  margin: 0;
+}
+
+.signers time {
+  color: var(--muted);
+  font-size: 0.85rem;
+}
+
+.colophon {
+  margin-top: 2rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--ink);
+}
+
+@media (max-width: 640px) {
+  .sheet {
+    width: auto;
+    margin: 0.75rem;
+    box-shadow: 4px 4px 0 var(--ink);
+  }
+
+  .row {
+    flex-direction: column;
+  }
+
+  button,
+  .post-x {
+    width: 100%;
+  }
+}

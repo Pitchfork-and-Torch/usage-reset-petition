@@ -1,0 +1,19 @@
+name = "usage-reset-petition"
+main = "src/worker.js"
+compatibility_date = "2026-10-03"
+account_id = "75c71da18eeb801b3408c812742d6590"
+workers_dev = true
+
+[assets]
+directory = "./public"
+binding = "ASSETS"
+run_worker_first = true
+not_found_handling = "404-page"
+
+[[kv_namespaces]]
+binding = "SIGNS"
+id = "1e7fa80983a84e3c9d892651d4648622"
+
+[[routes]]
+pattern = "usageresetpetition.jonbailey.xyz"
+custom_domain = true
